@@ -1,6 +1,8 @@
 import pathlib as pth
 
-main_path=pth.Path('.')
+current_dir= pth.Path(__file__).resolve().parent
 
-raw_data=main_path/"data"/"raw"/"WA_Fn-UseC_-Telco-Customer-Churn.csv"
+
+project_root = current_dir.parent.parent
+raw_data=project_root/'data'/'raw'/'WA_Fn-UseC_-Telco-Customer-Churn.csv'
 

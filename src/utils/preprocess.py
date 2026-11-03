@@ -36,7 +36,7 @@ class Preprocess:
         for col in cols_to_enc:
             enc = LabelEncoder()
             self.data[col] = enc.fit_transform(self.data[col])
-            self.encoding_classes[col] = enc
+            self.encoding_classes[col] = enc.classes_
 
         self.data[cols_to_norm] = self.scaler.fit_transform(self.data[cols_to_norm])
 

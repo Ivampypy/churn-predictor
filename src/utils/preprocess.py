@@ -4,7 +4,9 @@ from src.utils.config import raw_data
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 import torch
-import sys 
+import sys
+from src.utils.config import cat_cl,scal_json
+import json
 
 class Preprocess:
     def __init__(self, path: Path = raw_data):
@@ -36,9 +38,17 @@ class Preprocess:
         for col in cols_to_enc:
             enc = LabelEncoder()
             self.data[col] = enc.fit_transform(self.data[col])
-            self.encoding_classes[col] = enc.classes_
+            self.encoding_classes[col] = enc.classes_.tolist()
 
         self.data[cols_to_norm] = self.scaler.fit_transform(self.data[cols_to_norm])
+
+        scaler_data = {
+        "mean": self.scaler.mean_.tolist(),
+        "scale": self.scaler.scale_.tolist(),
+        "cols": ["SeniorCitizen", "tenure", "MonthlyCharges", "TotalCharges"]
+        }
+        with open(scal_json,'w') as f:
+            json.dump(scaler_data,f,indent=4)
 
     def data_split(self):
         target = (self.data["Churn"] == "Yes").astype(int)
@@ -84,11 +94,19 @@ class Preprocess:
             "data/preprocessed/test.pt",
         )
 
+
+    def save_to_json(self):
+        with open(cat_cl,'w') as f:
+            json.dump(self.encoding_classes,f,indent=4)
+
+
     def __call__(self):
         self.read_raw()
         self.drop_column()
         self.enc_norm_cl()
         self.save_to_disk()
+        self.save_to_json()
+
 
 
 if __name__ == "__main__":

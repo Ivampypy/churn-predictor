@@ -15,7 +15,7 @@ class ChurnMLP(N.Module):
         self.mlp=N.Sequential(
             N.Linear(input_layer_size,64),
             N.ReLU(),
-            N.Dropout(0.2),
+            N.Dropout(0.1),
 
             N.Linear(64,32),
             N.ReLU(),

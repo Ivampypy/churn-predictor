@@ -3,10 +3,10 @@ from pydantic import BaseModel
 
 class ClientData(BaseModel):
     gender: str
-    SeniorCitizen: int
+    SeniorCitizen: float
     Partner: str
     Dependents: str
-    tenure: int
+    tenure: float
     PhoneService: str
     MultipleLines: str
     InternetService: str

@@ -61,9 +61,13 @@ if submit_buttn:
             st.divider()
 
             if will_churn:
-                st.warning(f"Attention! High risk of leaving! Probability is {round(probs,2)}!")
+                st.warning(
+                    f"Attention! High risk of leaving! Probability is {round(probs,2)}!"
+                )
             else:
-                st.success(f"Everything is good, propability of leaving is too little: it stands at {round(probs,2)}")
+                st.success(
+                    f"Everything is good, propability of leaving is too little: it stands at {round(probs,2)}"
+                )
 
         else:
             st.error("Warning! API Error")

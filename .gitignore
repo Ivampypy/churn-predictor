@@ -3,4 +3,4 @@ data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv
 data/preprocessed
 .env
 .streamlit/secrets.toml
-loaded_models/churn_model.pth
+

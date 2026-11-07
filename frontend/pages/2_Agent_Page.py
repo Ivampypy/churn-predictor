@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 
-st.subheader('AI Strategy Adviser Powered by LLM')
+st.header('AI Strategy Adviser Powered by LLM')
 
 client_data=st.session_state.get('client_data')
 probs=st.session_state.get('probability')

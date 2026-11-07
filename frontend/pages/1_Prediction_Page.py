@@ -51,7 +51,7 @@ if submit_buttn:
     data["TotalCharges"] = response_tot_charges
 
     try:
-        response = requests.post("http://127.0.0.1:8000/predict", json=data)
+        response = requests.post("https://churn-predictor-0bss.onrender.com/predict", json=data)
 
         if response.status_code == 200:
             result = response.json()

@@ -1,5 +1,8 @@
 from openai import OpenAI
 import streamlit as st
+import os
+from dotenv import loadenv
+
 
 st.header('AI Strategy Adviser Powered by LLM')
 
@@ -8,12 +11,12 @@ probs=st.session_state.get('probability')
 
 
 
-
-api_key=st.secrets['OPENROUTER_API_KEY']
+loadenv()
+OPENROUTER_API_KEY=os.getenv("OPENROUTER_API_KEY")
 
 client=OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key=api_key
+        api_key=OPENROUTER_API_KEY
     )
 
 if probs is None or client_data is None:

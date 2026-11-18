@@ -81,15 +81,6 @@ with st.sidebar:
     show_pages = st.checkbox("Where to start", value=True)
 
     st.subheader("Backend")
-    api_url = st.text_input("API address", "http://127.0.0.1:8000")
-    if st.button("Check connection"):
-        st.session_state["api_up"] = api_is_up(api_url)
-
-    api_state = st.session_state.get("api_up")
-    if api_state is True:
-        st.success("API is reachable")
-    elif api_state is False:
-        st.error("API is not reachable")
 
 accent = ACCENTS[accent_name]
 

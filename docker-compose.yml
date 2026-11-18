@@ -7,7 +7,7 @@ services:
     ports:
       -8000:8000
     environment:
-      -API_AI_KEY=${OPENROUTER_API_KEY-:}
+      -API_AI_KEY=${OPENROUTER_API_KEY:-}
   
   frontend:
     build: .

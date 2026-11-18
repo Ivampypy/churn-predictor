@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir requirements.txt .
 
 COPY . .
 
-CMD ["uvicorn","mapi.main:app","--host","--port","8000"]
+CMD ["uvicorn","api.mapi:app","--host","--port","8000"]
 
 

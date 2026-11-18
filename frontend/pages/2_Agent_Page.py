@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 import os
-from dotenv import loadenv
+from dotenv import load_dotenv
 
 
 st.header('AI Strategy Adviser Powered by LLM')
@@ -11,7 +11,7 @@ probs=st.session_state.get('probability')
 
 
 
-loadenv()
+load_dotenv()
 OPENROUTER_API_KEY=os.getenv("OPENROUTER_API_KEY")
 
 client=OpenAI(

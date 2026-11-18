@@ -6,10 +6,10 @@ import streamlit as st
 import requests
 import json
 from src.utils.config import cat_cl
-from dotenv import loadenv
+from dotenv import load_dotenv
 import os
 
-loadenv()
+load_dotenv()
 api_url=os.getenv("api_url","https://churn-predictor-0bss.onrender.com/predict")
 
 st.header(" Main Page for Churn Prediction")

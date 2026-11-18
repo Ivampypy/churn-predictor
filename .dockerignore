@@ -1,5 +1,14 @@
-data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv
-.vscode/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+.ipynb_checkpoints/
+notebooks/
+*.ipynb
+data/
 loaded_models/
 json_artifacts/
 .streamlit/
+.DS_Store

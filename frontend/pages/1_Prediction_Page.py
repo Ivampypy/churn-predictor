@@ -6,6 +6,11 @@ import streamlit as st
 import requests
 import json
 from src.utils.config import cat_cl
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+api_url=os.getenv("api_url","https://churn-predictor-0bss.onrender.com/predict")
 
 st.header(" Main Page for Churn Prediction")
 with st.form("Prediction form"):
@@ -51,7 +56,7 @@ if submit_buttn:
     data["TotalCharges"] = response_tot_charges
 
     try:
-        response = requests.post("https://churn-predictor-0bss.onrender.com/predict", json=data)
+        response = requests.post(f"{api_url}", json=data)
 
         if response.status_code == 200:
             result = response.json()

@@ -79,4 +79,4 @@ They are presented on the main page of site.
 ## Contacts
 Any suggestions/questions? You can keep in touch with me via:
 - Telegram: **@nepipipip**
-- LinkedIn: **www.linkedin.com/in/ivan-karzin-64940244a**
+- LinkedIn: **www.linkedin.com/in/ivan-karzin-ml**
